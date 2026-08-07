@@ -1,3 +1,4 @@
+import type { PropType } from 'vue'
 import type { FormItemRule } from '@cream-ui/utils'
 import { FORM_INJECTION_KEY, FORM_ITEM_INJECTION_KEY } from '@cream-ui/constants'
 import type { InjectionKey } from 'vue'
@@ -14,6 +15,7 @@ export interface FormItemProps {
   prop?: string
   required?: boolean
   rules?: FormItemRule[]
+  labelWidth?: string | number
 }
 
 export interface FormContext {
@@ -33,11 +35,11 @@ export interface FormItemContext {
 
 export const formProps = {
   model: {
-    type: Object,
+    type: Object as PropType<Record<string, any>>,
     default: () => ({}),
   },
   rules: {
-    type: Object,
+    type: Object as PropType<Record<string, FormItemRule[]>>,
     default: () => ({}),
   },
   labelWidth: {
@@ -45,14 +47,13 @@ export const formProps = {
     default: '',
   },
   labelPosition: {
-    type: String,
+    type: String as PropType<'left' | 'right' | 'top'>,
     default: 'right',
-    values: ['left', 'right', 'top'] as const,
   },
 }
 
 export const formEmits = {
-  validate: (prop: string, valid: boolean) => true,
+  validate: (_prop: string, _valid: boolean) => true,
 }
 
 export const formItemProps = {
@@ -69,8 +70,12 @@ export const formItemProps = {
     default: false,
   },
   rules: {
-    type: Array,
+    type: Array as PropType<FormItemRule[]>,
     default: () => [],
+  },
+  labelWidth: {
+    type: [String, Number] as PropType<string | number>,
+    default: '',
   },
 }
 

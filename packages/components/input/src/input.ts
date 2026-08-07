@@ -1,3 +1,4 @@
+import type { PropType } from 'vue'
 import type { ComponentSize } from '@cream-ui/utils'
 
 export interface InputProps {
@@ -16,7 +17,7 @@ export const inputProps = {
     default: '',
   },
   type: {
-    type: String,
+    type: String as PropType<'text' | 'password' | 'number'>,
     default: 'text',
   },
   placeholder: {
@@ -36,15 +37,15 @@ export const inputProps = {
     default: false,
   },
   size: {
-    type: String,
+    type: String as PropType<ComponentSize>,
     default: 'default',
   },
 }
 
 export const inputEmits = {
-  'update:modelValue': (value: string | number) => true,
-  input: (value: string | number) => true,
-  change: (value: string | number) => true,
+  'update:modelValue': (_value: string | number) => true,
+  input: (_value: string | number) => true,
+  change: (_value: string | number) => true,
   focus: (evt: FocusEvent) => evt instanceof FocusEvent,
   blur: (evt: FocusEvent) => evt instanceof FocusEvent,
   clear: () => true,

@@ -1,3 +1,4 @@
+import type { PropType } from 'vue'
 import type { ComponentSize, ComponentType } from '@cream-ui/utils'
 
 export interface ButtonProps {
@@ -14,11 +15,11 @@ export interface ButtonProps {
 
 export const buttonProps = {
   type: {
-    type: String,
+    type: String as PropType<ComponentType>,
     default: '',
   },
   size: {
-    type: String,
+    type: String as PropType<ComponentSize>,
     default: 'default',
   },
   disabled: {

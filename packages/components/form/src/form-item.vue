@@ -40,16 +40,16 @@ const props = defineProps(formItemProps)
 const ns = useNamespace('form-item')
 const form = inject<FormContext>(FORM_KEY)
 
-const { validateMessage, validateState, validate, resetField } = useFormItem(props)
+const { validateMessage, validate, resetField } = useFormItem(props)
 
 const isRequired = computed(() => {
-  const rules = form?.rules?.[props.prop] || []
+  const rules = (props.prop && form?.rules?.[props.prop]) || []
   return rules.some((rule) => rule.required)
 })
 
 const labelStyle = computed(() => {
   if (!form) return {}
-  const width = props.labelWidth || form.labelWidth
+  const width = props.labelWidth ?? form.labelWidth
   if (width) {
     return { width: typeof width === 'number' ? `${width}px` : width }
   }

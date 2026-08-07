@@ -14,7 +14,7 @@ export const useFormItem = (props: FormItemProps) => {
   })
 
   const getRules = (): FormItemRule[] => {
-    const formRules = form?.rules?.[props.prop] || []
+    const formRules = (props.prop && form?.rules?.[props.prop]) || []
     const selfRules = props.rules || []
     return [...formRules, ...selfRules]
   }

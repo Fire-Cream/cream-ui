@@ -7,7 +7,7 @@ export * from '@cream-ui/utils'
 export * from '@cream-ui/constants'
 
 const install = (app: App) => {
-  Object.entries(components).forEach(([name, component]) => {
+  Object.entries(components).forEach(([, component]) => {
     const c = component as any
     if (c.install) {
       app.use(c)

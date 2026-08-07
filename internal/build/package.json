@@ -1,0 +1,14 @@
+{
+  "name": "@cream-ui/build",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.7.0",
+    "sass": "^1.70.0",
+    "@vitejs/plugin-vue": "^5.0.0"
+  }
+}

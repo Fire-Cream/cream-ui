@@ -1,0 +1,17 @@
+{
+  "name": "@cream-ui/theme-chalk",
+  "version": "0.1.0",
+  "main": "src/index.scss",
+  "style": "src/index.scss",
+  "exports": {
+    ".": {
+      "style": "./src/index.scss"
+    },
+    "./src/*.scss": {
+      "style": "./src/*.scss"
+    }
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}

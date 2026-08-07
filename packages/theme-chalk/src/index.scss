@@ -1,0 +1,8 @@
+@import './common/var';
+@import './mixins/mixins';
+@import './mixins/config';
+
+// 导入所有组件样式
+@import './button';
+@import './input';
+@import './form';

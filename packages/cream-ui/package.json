@@ -1,0 +1,40 @@
+{
+  "name": "cream-ui",
+  "version": "0.1.0",
+  "description": "Vue 3 前端 UI 组件库",
+  "main": "dist/cream-ui.cjs.js",
+  "module": "dist/cream-ui.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/cream-ui.esm.js",
+      "require": "./dist/cream-ui.cjs.js"
+    },
+    "./dist/*.css": {
+      "style": "./dist/*.css"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "dist/*.css"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@cream-ui/components": "workspace:*",
+    "@cream-ui/hooks": "workspace:*",
+    "@cream-ui/utils": "workspace:*",
+    "@cream-ui/constants": "workspace:*",
+    "@cream-ui/theme-chalk": "workspace:*",
+    "vue": "^3.4.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "keywords": ["vue3", "component-library", "ui"],
+  "license": "Apache-2.0"
+}

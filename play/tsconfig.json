@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "cream-ui": ["../packages/cream-ui/src/index.ts"],
+      "@cream-ui/*": ["../packages/*/src"],
+      "@cream-ui/components": ["../packages/components/src"],
+      "@cream-ui/hooks": ["../packages/hooks/src"],
+      "@cream-ui/utils": ["../packages/utils/src"],
+      "@cream-ui/constants": ["../packages/constants/src"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist"]
+}

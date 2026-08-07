@@ -1,0 +1,531 @@
+@use 'sass:color';
+@import './common/var';
+@import './mixins/mixins';
+@import './mixins/config';
+
+@include b('button') {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--background-color-white;
+  border: 1px solid $--border-color-base;
+  color: $--color-text-regular;
+  appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: $--transition-duration $--transition-function;
+  font-weight: 500;
+  user-select: none;
+  vertical-align: middle;
+  border-radius: $--border-radius-base;
+
+  @include config();
+
+  &:hover,
+  &:focus {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+  }
+
+  &:active {
+    color: $--color-primary-dark-2;
+    border-color: $--color-primary-dark-2;
+    outline: none;
+  }
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  // 类型
+  @include m('primary') {
+    color: #fff;
+    background-color: $--color-primary;
+    border-color: $--color-primary;
+
+    &:hover,
+    &:focus {
+      background: $--color-primary-light-3;
+      border-color: $--color-primary-light-3;
+      color: #fff;
+    }
+
+    &:active {
+      background: $--color-primary-dark-2;
+      border-color: $--color-primary-dark-2;
+      color: #fff;
+    }
+  }
+
+  @include m('success') {
+    color: #fff;
+    background-color: $--color-success;
+    border-color: $--color-success;
+
+    &:hover,
+    &:focus {
+      background: color.mix(#fff, $--color-success, 20%);
+      border-color: color.mix(#fff, $--color-success, 20%);
+      color: #fff;
+    }
+
+    &:active {
+      background: color.mix(#000, $--color-success, 20%);
+      border-color: color.mix(#000, $--color-success, 20%);
+      color: #fff;
+    }
+  }
+
+  @include m('warning') {
+    color: #fff;
+    background-color: $--color-warning;
+    border-color: $--color-warning;
+
+    &:hover,
+    &:focus {
+      background: color.mix(#fff, $--color-warning, 20%);
+      border-color: color.mix(#fff, $--color-warning, 20%);
+      color: #fff;
+    }
+
+    &:active {
+      background: color.mix(#000, $--color-warning, 20%);
+      border-color: color.mix(#000, $--color-warning, 20%);
+      color: #fff;
+    }
+  }
+
+  @include m('danger') {
+    color: #fff;
+    background-color: $--color-danger;
+    border-color: $--color-danger;
+
+    &:hover,
+    &:focus {
+      background: color.mix(#fff, $--color-danger, 20%);
+      border-color: color.mix(#fff, $--color-danger, 20%);
+      color: #fff;
+    }
+
+    &:active {
+      background: color.mix(#000, $--color-danger, 20%);
+      border-color: color.mix(#000, $--color-danger, 20%);
+      color: #fff;
+    }
+  }
+
+  @include m('info') {
+    color: #fff;
+    background-color: $--color-info;
+    border-color: $--color-info;
+
+    &:hover,
+    &:focus {
+      background: color.mix(#fff, $--color-info, 20%);
+      border-color: color.mix(#fff, $--color-info, 20%);
+      color: #fff;
+    }
+
+    &:active {
+      background: color.mix(#000, $--color-info, 20%);
+      border-color: color.mix(#000, $--color-info, 20%);
+      color: #fff;
+    }
+  }
+
+  // 朴素按钮
+  @include when('plain') {
+    background: transparent;
+    border-color: $--color-primary;
+    color: $--color-primary;
+
+    &:hover,
+    &:focus {
+      background: $--background-color-white;
+      border-color: $--color-primary;
+      color: $--color-primary;
+    }
+
+    &:active {
+      background: $--background-color-white;
+      border-color: $--color-primary-dark-2;
+      color: $--color-primary-dark-2;
+    }
+
+    // 朴素主要按钮
+    &.ag-button--primary {
+      background: transparent;
+      border-color: $--color-primary;
+      color: $--color-primary;
+
+      &:hover,
+      &:focus {
+        background: $--color-primary;
+        border-color: $--color-primary;
+        color: #fff;
+      }
+
+      &:active {
+        background: $--color-primary-dark-2;
+        border-color: $--color-primary-dark-2;
+        color: #fff;
+      }
+    }
+
+    // 朴素成功按钮
+    &.ag-button--success {
+      background: transparent;
+      border-color: $--color-success;
+      color: $--color-success;
+
+      &:hover,
+      &:focus {
+        background: $--color-success;
+        border-color: $--color-success;
+        color: #fff;
+      }
+
+      &:active {
+        background: color.mix(#000, $--color-success, 20%);
+        border-color: color.mix(#000, $--color-success, 20%);
+        color: #fff;
+      }
+    }
+
+    // 朴素警告按钮
+    &.ag-button--warning {
+      background: transparent;
+      border-color: $--color-warning;
+      color: $--color-warning;
+
+      &:hover,
+      &:focus {
+        background: $--color-warning;
+        border-color: $--color-warning;
+        color: #fff;
+      }
+
+      &:active {
+        background: color.mix(#000, $--color-warning, 20%);
+        border-color: color.mix(#000, $--color-warning, 20%);
+        color: #fff;
+      }
+    }
+
+    // 朴素危险按钮
+    &.ag-button--danger {
+      background: transparent;
+      border-color: $--color-danger;
+      color: $--color-danger;
+
+      &:hover,
+      &:focus {
+        background: $--color-danger;
+        border-color: $--color-danger;
+        color: #fff;
+      }
+
+      &:active {
+        background: color.mix(#000, $--color-danger, 20%);
+        border-color: color.mix(#000, $--color-danger, 20%);
+        color: #fff;
+      }
+    }
+
+    // 朴素信息按钮
+    &.ag-button--info {
+      background: transparent;
+      border-color: $--color-info;
+      color: $--color-info;
+
+      &:hover,
+      &:focus {
+        background: $--color-info;
+        border-color: $--color-info;
+        color: #fff;
+      }
+
+      &:active {
+        background: color.mix(#000, $--color-info, 20%);
+        border-color: color.mix(#000, $--color-info, 20%);
+        color: #fff;
+      }
+    }
+  }
+
+  // 圆角按钮
+  @include when('round') {
+    border-radius: $--border-radius-round;
+  }
+
+  // 虚线按钮
+  @include when('dashed') {
+    background: transparent;
+    border: 1px dashed $--border-color-base;
+    color: $--color-text-regular;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      border-color: $--color-primary;
+      color: $--color-primary;
+      border-style: dashed;
+    }
+
+    &:active {
+      background: transparent;
+      border-color: $--color-primary-dark-2;
+      color: $--color-primary-dark-2;
+    }
+
+    // 虚线主要按钮
+    &.ag-button--primary {
+      background: transparent;
+      border-color: $--color-primary;
+      color: $--color-primary;
+
+      &:hover,
+      &:focus {
+        background: $--color-primary-light-9;
+        border-color: $--color-primary;
+        color: $--color-primary;
+      }
+
+      &:active {
+        background: $--color-primary-light-7;
+        border-color: $--color-primary-dark-2;
+        color: $--color-primary-dark-2;
+      }
+    }
+
+    // 虚线成功按钮
+    &.ag-button--success {
+      background: transparent;
+      border-color: $--color-success;
+      color: $--color-success;
+
+      &:hover,
+      &:focus {
+        background: color.mix(#fff, $--color-success, 90%);
+        border-color: $--color-success;
+        color: $--color-success;
+      }
+
+      &:active {
+        background: color.mix(#fff, $--color-success, 70%);
+        border-color: color.mix(#000, $--color-success, 20%);
+        color: color.mix(#000, $--color-success, 20%);
+      }
+    }
+
+    // 虚线警告按钮
+    &.ag-button--warning {
+      background: transparent;
+      border-color: $--color-warning;
+      color: $--color-warning;
+
+      &:hover,
+      &:focus {
+        background: color.mix(#fff, $--color-warning, 90%);
+        border-color: $--color-warning;
+        color: $--color-warning;
+      }
+
+      &:active {
+        background: color.mix(#fff, $--color-warning, 70%);
+        border-color: color.mix(#000, $--color-warning, 20%);
+        color: color.mix(#000, $--color-warning, 20%);
+      }
+    }
+
+    // 虚线危险按钮
+    &.ag-button--danger {
+      background: transparent;
+      border-color: $--color-danger;
+      color: $--color-danger;
+
+      &:hover,
+      &:focus {
+        background: color.mix(#fff, $--color-danger, 90%);
+        border-color: $--color-danger;
+        color: $--color-danger;
+      }
+
+      &:active {
+        background: color.mix(#fff, $--color-danger, 70%);
+        border-color: color.mix(#000, $--color-danger, 20%);
+        color: color.mix(#000, $--color-danger, 20%);
+      }
+    }
+
+    // 虚线信息按钮
+    &.ag-button--info {
+      background: transparent;
+      border-color: $--color-info;
+      color: $--color-info;
+
+      &:hover,
+      &:focus {
+        background: color.mix(#fff, $--color-info, 90%);
+        border-color: $--color-info;
+        color: $--color-info;
+      }
+
+      &:active {
+        background: color.mix(#fff, $--color-info, 70%);
+        border-color: color.mix(#000, $--color-info, 20%);
+        color: color.mix(#000, $--color-info, 20%);
+      }
+    }
+  }
+
+  // 图标按钮
+  @include when('circle') {
+    border-radius: 50%;
+    padding: 0;
+    width: $--size-default;
+    height: $--size-default;
+
+    @include e('content') {
+      display: none;
+    }
+
+    @include e('icon') {
+      margin: 0;
+    }
+
+    // 大小变体
+    &.ag-button--large {
+      width: $--size-large;
+      height: $--size-large;
+    }
+
+    &.ag-button--small {
+      width: $--size-small;
+      height: $--size-small;
+    }
+  }
+
+  // 禁用状态
+  @include when('disabled') {
+    &,
+    &:hover,
+    &:focus {
+      color: $--color-text-placeholder;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $--background-color-white;
+      border-color: $--border-color-lighter;
+    }
+
+    // 禁用主要按钮
+    &.ag-button--primary {
+      background-color: color.mix(#fff, $--color-primary, 80%);
+      border-color: color.mix(#fff, $--color-primary, 80%);
+      color: #fff;
+    }
+
+    // 禁用成功按钮
+    &.ag-button--success {
+      background-color: color.mix(#fff, $--color-success, 80%);
+      border-color: color.mix(#fff, $--color-success, 80%);
+      color: #fff;
+    }
+
+    // 禁用警告按钮
+    &.ag-button--warning {
+      background-color: color.mix(#fff, $--color-warning, 80%);
+      border-color: color.mix(#fff, $--color-warning, 80%);
+      color: #fff;
+    }
+
+    // 禁用危险按钮
+    &.ag-button--danger {
+      background-color: color.mix(#fff, $--color-danger, 80%);
+      border-color: color.mix(#fff, $--color-danger, 80%);
+      color: #fff;
+    }
+
+    // 禁用信息按钮
+    &.ag-button--info {
+      background-color: color.mix(#fff, $--color-info, 80%);
+      border-color: color.mix(#fff, $--color-info, 80%);
+      color: #fff;
+    }
+  }
+
+  // 加载状态
+  @include when('loading') {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  // 尺寸变体
+  @include m('large') {
+    @include config('large');
+  }
+
+  @include m('small') {
+    @include config('small');
+  }
+
+  // 加载图标容器样式
+  @include e('loading') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+  }
+
+  // 加载图标样式
+  @include e('loading-icon') {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    animation: rotating 2s linear infinite;
+  }
+
+  // 图标样式
+  @include e('icon') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+
+    svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+  }
+
+  // 图标按钮中的图标样式
+  &.is-circle {
+    @include e('icon') {
+      margin: 0;
+    }
+  }
+}
+
+// 普通按钮中的图标样式（非圆形按钮）
+.ag-button:not(.is-circle) {
+  .ag-button__icon {
+    margin-right: 6px;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,153 @@
+@import './common/var';
+@import './mixins/mixins';
+@import './mixins/config';
+
+@include b('input') {
+  position: relative;
+  font-size: $--font-size-default;
+  display: inline-block;
+  width: 100%;
+
+  @include e('inner') {
+    appearance: none;
+    background-color: $--background-color-white;
+    background-image: none;
+    border-radius: $--border-radius-base;
+    border: 1px solid $--border-color-base;
+    box-sizing: border-box;
+    color: $--color-text-regular;
+    display: inline-block;
+    font-size: inherit;
+    height: $--size-default;
+    line-height: $--size-default;
+    outline: none;
+    padding: 0 15px;
+    transition: $--transition-duration $--transition-function;
+    width: 100%;
+
+    &::placeholder {
+      color: $--color-text-placeholder;
+    }
+
+    &:hover {
+      border-color: $--color-text-placeholder;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $--color-primary;
+    }
+  }
+
+  // 禁用状态
+  @include when('disabled') {
+    .ag-input__inner {
+      background-color: $--background-color-base;
+      border-color: $--border-color-lighter;
+      color: $--color-text-placeholder;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: $--color-text-placeholder;
+      }
+    }
+  }
+
+  // 可清除
+  @include m('clearable') {
+    .ag-input__inner {
+      padding-right: 30px;
+    }
+  }
+
+  // 密码输入
+  @include m('password') {
+    .ag-input__inner {
+      padding-right: 30px;
+    }
+  }
+
+  // 尺寸变体
+  @include m('large') {
+    .ag-input__inner {
+      height: $--size-large;
+      line-height: $--size-large;
+    }
+  }
+
+  @include m('small') {
+    .ag-input__inner {
+      height: $--size-small;
+      line-height: $--size-small;
+    }
+  }
+
+  // 前缀和后缀
+  @include e('prefix') {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $--color-text-placeholder;
+  }
+
+  @include e('suffix') {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $--color-text-placeholder;
+  }
+
+  @include e('clear') {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $--color-text-placeholder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+
+    &:hover {
+      color: $--color-text-secondary;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+  }
+
+  @include e('password') {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $--color-text-placeholder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+
+    &:hover {
+      color: $--color-text-secondary;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+  }
+}

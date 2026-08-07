@@ -1,0 +1,56 @@
+@use 'sass:color';
+
+// 颜色系统
+$--color-primary: #409eff !default;
+$--color-success: #67c23a !default;
+$--color-warning: #e6a23c !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
+
+// 浅色
+$--color-primary-light-3: color.mix(#fff, $--color-primary, 30%) !default;
+$--color-primary-light-5: color.mix(#fff, $--color-primary, 50%) !default;
+$--color-primary-light-7: color.mix(#fff, $--color-primary, 70%) !default;
+$--color-primary-light-9: color.mix(#fff, $--color-primary, 90%) !default;
+
+// 深色
+$--color-primary-dark-2: color.mix(#000, $--color-primary, 20%) !default;
+
+// 文字颜色
+$--color-text-primary: #303133 !default;
+$--color-text-regular: #606266 !default;
+$--color-text-secondary: #909399 !default;
+$--color-text-placeholder: #c0c4cc !default;
+
+// 边框颜色
+$--border-color-base: #dcdfe6 !default;
+$--border-color-light: #e4e7ed !default;
+$--border-color-lighter: #ebeef5 !default;
+$--border-color-extra-light: #f2f6fc !default;
+
+// 背景颜色
+$--background-color-base: #f5f7fa !default;
+$--background-color-white: #fff !default;
+
+// 尺寸系统
+$--size-large: 40px !default;
+$--size-default: 32px !default;
+$--size-small: 24px !default;
+
+// 字体大小
+$--font-size-large: 14px !default;
+$--font-size-default: 14px !default;
+$--font-size-small: 12px !default;
+
+// 圆角
+$--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-round: 20px !default;
+
+// 阴影
+$--box-shadow-base: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+$--box-shadow-light: 0 2px 4px 0 rgba(0, 0, 0, 0.12) !default;
+
+// 过渡
+$--transition-duration: 0.3s !default;
+$--transition-function: ease-in-out !default;

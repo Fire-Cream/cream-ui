@@ -1,0 +1,27 @@
+@import '../common/var';
+
+@mixin when($condition) {
+  &.is-#{$condition} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+@mixin b($block) {
+  @at-root {
+    .ag-#{$block} {
+      @content;
+    }
+  }
+}

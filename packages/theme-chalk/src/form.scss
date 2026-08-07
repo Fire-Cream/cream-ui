@@ -1,0 +1,72 @@
+@import './common/var';
+@import './mixins/mixins';
+@import './mixins/config';
+
+@include b('form') {
+  &--label-left {
+    .ag-form-item__label {
+      text-align: left;
+    }
+  }
+
+  &--label-right {
+    .ag-form-item__label {
+      text-align: right;
+    }
+  }
+
+  &--label-top {
+    .ag-form-item__label {
+      text-align: left;
+      padding-bottom: 8px;
+      display: block;
+    }
+
+    .ag-form-item__content {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@include b('form-item') {
+  margin-bottom: 22px;
+  display: flex;
+  align-items: flex-start;
+
+  @include e('label') {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: $--font-size-default;
+    color: $--color-text-regular;
+    line-height: $--size-default;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+  }
+
+  @include e('content') {
+    position: relative;
+    font-size: $--font-size-default;
+    line-height: $--size-default;
+    flex: 1;
+  }
+
+  @include e('error') {
+    color: $--color-danger;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  // 必填标记
+  @include when('required') {
+    .ag-form-item__label::before {
+      content: '*';
+      color: $--color-danger;
+      margin-right: 4px;
+    }
+  }
+}

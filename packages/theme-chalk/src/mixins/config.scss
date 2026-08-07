@@ -1,0 +1,15 @@
+@mixin config($size: 'default') {
+  @if $size == 'large' {
+    height: $--size-large;
+    font-size: $--font-size-large;
+    padding: 0 20px;
+  } @else if $size == 'small' {
+    height: $--size-small;
+    font-size: $--font-size-small;
+    padding: 0 10px;
+  } @else {
+    height: $--size-default;
+    font-size: $--font-size-default;
+    padding: 0 15px;
+  }
+}
